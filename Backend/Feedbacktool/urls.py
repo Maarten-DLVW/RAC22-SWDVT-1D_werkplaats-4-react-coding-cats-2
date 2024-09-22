@@ -24,4 +24,5 @@ urlpatterns = [
     path('api/PostRespond/', views.post_respond, name='post_respond'),
     path('api/surveys/count/', views.count_surveys, name='survey_count'),
     path('api/counters/', views.counters),
+    path('', views.noaccess),
 ]

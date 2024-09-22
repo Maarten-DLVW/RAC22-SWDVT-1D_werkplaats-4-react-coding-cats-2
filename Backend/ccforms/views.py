@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from django.contrib.auth.models import User
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework import generics, status
 from rest_framework.decorators import api_view
@@ -307,3 +307,7 @@ def counters(request):
     }
 
     return JsonResponse(data)
+
+# Reroute the user when they reach the localhost:8000/ page
+def noaccess(request):
+    return redirect('admin/')
